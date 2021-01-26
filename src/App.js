@@ -12,6 +12,47 @@ function App() {
   const [userInput, setUserInput] = useState('')
   const [error, setError] = useState(null)
 
+  useEffect(() => {
+    fetch("https://api.github.com/users/example")
+      .then(res => res.json())
+      .then(data => {
+        setData(data)
+      })
+  }, [])
+
+  const setData = ({
+    name,
+    login,
+    followers,
+    following,
+    public_repos,
+    avatar_url
+  }) => {
+    setName(name)
+    setUsername(login)
+    setFollowers(followers)
+    setFollowing(following)
+    setRepos(public_repos)
+    setAvatar(avatar_url)
+  }
+
+  const handleSearch = (e) => {
+    setUserInput(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    fetch(`https://api.github.com/users/${userInput}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.message) {
+          setError(data.message)
+        } else {
+          setData(data)
+          setError(null)
+        }
+      })
+  }
+
   return (
     <>
       <div className='navbar'>Github Search</div>
@@ -42,7 +83,7 @@ function App() {
                 {repos} Repositories
             </a>
             </Card.Content>
-            
+
             <Card.Content extra>
               <a>
                 <Icon name='user' />
