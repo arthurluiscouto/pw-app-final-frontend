@@ -74,7 +74,7 @@ function App() {
             />
             <Card.Content>
               <Card.Header>Nome: {name} </Card.Header>
-              <Card.Header>Username: {userName} \n </Card.Header>
+              <Card.Header>Username: {userName} </Card.Header>
             </Card.Content>
 
             <Card.Content extra>
