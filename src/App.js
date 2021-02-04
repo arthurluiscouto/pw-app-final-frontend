@@ -55,6 +55,7 @@ function App() {
 
   return (
     <>
+
       <div className='navbar'>Github Search</div>
       <div className="search">
         <Form onSubmit={handleSubmit}>
@@ -65,7 +66,7 @@ function App() {
           </Form.Group>
         </Form>
       </div>
-      { error ? (<h1>{error}</h1>) : (
+      { error ? (<h1 className="error">{error}</h1>) : (
         <div className="card">
           <Card>
             <Image src={avatar}
@@ -100,7 +101,9 @@ function App() {
           </Card>
         </div>
       )}
+
     </>
+
   );
 }
 

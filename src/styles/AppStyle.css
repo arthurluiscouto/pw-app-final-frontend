@@ -1,17 +1,23 @@
 .navbar{
     padding: 20px;
     background-color:silver;
-    justify-content: end;
+    justify-content: center;
 }
 
 .search {
     display: flex;
-    justify-content:center;
-    padding: 20px 0;
+    justify-content:end;
+    padding: 20px 200px;
 }
 
 .card {
     display: flex;
-    justify-content: center;
+    justify-content: end;
+    padding: 20px 200px;
+}
 
+.error {
+     display: flex;
+    justify-content: end;
+    padding: 20px 200px;
 }
