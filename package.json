@@ -39,5 +39,6 @@
   },
   "engines": {
     "node": "14.15.0"
-  }
+  },
+  "proxy": "https://pw-app-backend.herokuapp.com"
 }
