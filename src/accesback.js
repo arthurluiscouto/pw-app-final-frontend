@@ -12,7 +12,7 @@ class Api extends Component {
     }
 
     callApi = async () => {
-        const response = await fetch('https://pw-app-backend.herokuapp.com/user');
+        const response = await fetch('http://localhost:5000/user');
         const body = await response.json();
         if (response.status !== 200) throw Error(body.message);
 
